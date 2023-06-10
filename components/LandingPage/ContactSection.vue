@@ -14,12 +14,20 @@
 
     <div class="mt-12 grid items-center lg:grid-cols-2 gap-6 lg:gap-16">
       <!-- Card -->
-      <div class="flex flex-col border rounded-xl p-4 sm:p-6 lg:p-8 dark:border-primary bg-white">
+      <div class="flex flex-col border rounded-xl p-4 sm:p-6 lg:p-8 dark:border-primary bg-white relative">
+
+        <!-- Success Screen -->
+        <div v-if="isSubmitted" class="h-full w-full absolute rounded-xl top-0 left-0 bg-white/50 backdrop-blur flex text-center flex-col justify-center items-center">
+          <h2 class="block text-3xl font-bold text-primary sm:text-4xl lg:text-6xl lg:leading-tight">Thank you!</h2>
+          <p class="mt-1 text-dark">Your feedback is greatly appreciated and we will get back to you as soon as possible!</p>
+        </div>
+
+
         <h2 class="mb-8 text-xl font-semibold text-gray-800 dark:text-gray-200">
           Fill in the form
         </h2>
 
-        <form>
+        <form @submit.prevent>
           <div class="grid gap-4">
             <!-- Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -30,29 +38,29 @@
 
               <div class="border rounded">
                 <label for="hs-lastname-contacts-1" class="sr-only">Last Name</label>
-                <input type="text" name="hs-lastname-contacts-1" id="hs-lastname-contacts-1" class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Last Name">
+                <input type="text" v-model="contactData.lastname" name="hs-lastname-contacts-1" id="hs-lastname-contacts-1" class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Last Name">
               </div>
             </div>
             <!-- End Grid -->
 
             <div class="border rounded">
               <label for="hs-email-contacts-1" class="sr-only">Email</label>
-              <input type="email" name="hs-email-contacts-1" id="hs-email-contacts-1" autocomplete="email" class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Email">
+              <input type="email" v-model="contactData.email" name="hs-email-contacts-1" id="hs-email-contacts-1" autocomplete="email" class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Email">
             </div>
 
             <div class="border rounded">
               <label for="hs-phone-number-1" class="sr-only">Phone Number</label>
-              <input type="text" name="hs-phone-number-1" id="hs-phone-number-1" class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Phone Number">
+              <input type="text" v-model="contactData.phoneNumber" name="hs-phone-number-1" id="hs-phone-number-1" class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Phone Number">
             </div>
 
             <div class="border rounded">
               <label for="hs-about-contacts-1" class="sr-only">Details</label>
-              <textarea id="hs-about-contacts-1" name="hs-about-contacts-1" rows="4" class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Details"></textarea>
+              <textarea id="hs-about-contacts-1" v-model="contactData.message" name="hs-about-contacts-1" rows="4" class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Details"></textarea>
             </div>
           </div>
           <!-- End Grid -->
 
-          <div class="mt-4 grid">
+          <div class="mt-4 grid" @click="submitForm">
             <button type="submit" class="inline-flex justify-center items-center gap-x-3 text-center bg-primary hover:bg-primary/50 border border-transparent text-sm lg:text-base text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-white transition py-3 px-4 dark:focus:ring-offset-gray-800">Send inquiry</button>
           </div>
 
@@ -114,15 +122,17 @@
 </template>
 
 <script lang="ts" setup>
-
   import { QuestionMarkCircleIcon, LightBulbIcon, ChatBubbleLeftIcon, GiftIcon } from '@heroicons/vue/24/outline'
+
+  const client = useSupabaseClient()
 
   const contactData = ref(
     {
       firstname: "",
       lastname: "",
+      email: "",
       phoneNumber: "",
-      details: "",
+      message: "",
     }
   )
   const isSubmitted = ref(false)
@@ -130,6 +140,24 @@
   const handleDonation = async () => {
       const { data } = await useFetch('/api/donate')
       await navigateTo(data.value?.url, {external: true, })
+  }
+
+  const submitForm = async () => {
+
+    isSubmitted.value = false
+
+    const { data } = await useAsyncData('contact', async () => {
+      const { data } = await client.from('contact').insert({
+        firstName: contactData.value.firstname,
+        lastName: contactData.value.lastname,
+        email: contactData.value.email,
+        phoneNumber: contactData.value.phoneNumber,
+        message: contactData.value.message,
+      })
+    return data
+    })
+
+    isSubmitted.value = true
   }
 
 

@@ -11,9 +11,9 @@ export default defineEventHandler((event) => {
     let price = ''
 
     if(config.public.DEV_DEBUG_MODE == 'false'){
-        price = 'price_1NHP2kCtw8X2LUfLhJvgR0lE'
+        price = 'price_1NFeKKGuH7AhgvkWyElhKX1Z'
     } else {
-        price = 'price_1NHOy0Ctw8X2LUfLD5RBfCyA'
+        price = 'price_1NFeKKGuH7AhgvkWyElhKX1Z'
     }
     
 
