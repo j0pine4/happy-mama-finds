@@ -98,7 +98,7 @@
         <!-- End Icon Block -->
 
         <!-- Icon Block -->
-        <div class=" flex gap-x-7 py-6">
+        <div class=" flex gap-x-7 py-6" @click="handleDonation">
           <GiftIcon class="flex-shrink-0 w-6 h-6 mt-1.5 stroke-primary"></GiftIcon>
           <div class="cursor-pointer">
             <h3 class="font-semibold text-gray-800 dark:text-gray-200">Provide a Donation</h3>
@@ -126,6 +126,11 @@
     }
   )
   const isSubmitted = ref(false)
+
+  const handleDonation = async () => {
+      const { data } = await useFetch('/api/donate')
+      await navigateTo(data.value?.url, {external: true, })
+  }
 
 
 </script>
