@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
     modules: ['@nuxtjs/tailwindcss', '@nuxtjs/supabase'],
     css: ['~/assets/css/styles.css'],
+    plugins: [{ src: '~/plugins/vercel.ts', mode: 'client' }],
     app: {
         head: {
             script: [{
