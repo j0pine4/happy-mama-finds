@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@heroicons/vue": "^2.0.18",
+    "@vercel/analytics": "^1.0.1",
     "preline": "^1.8.0",
     "stripe": "^12.9.0"
   }
