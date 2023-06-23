@@ -16,9 +16,9 @@
     </div>
     <div id="navbar-collapse-with-animation" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block">
       <div class="flex flex-col gap-y-4 gap-x-0 mt-5 sm:flex-row sm:items-center sm:justify-end sm:gap-y-0 sm:gap-x-7 sm:mt-0 sm:pl-7">
-        <a class="font-medium text-primary sm:py-6" href="#" aria-current="page">Home</a>
+        <NuxtLink to="/" class="font-medium text-primary sm:py-6" href="#" aria-current="page">Home</NuxtLink>
         <a class="font-medium text-dark/[.8] hover:text-dark sm:py-6" href="#events">Events</a>
-        <a class="font-medium text-dark/[.8] hover:text-dark sm:py-6" href="#about">About Us</a>
+        <NuxtLink to="/blog" class="font-medium text-dark/[.8] hover:text-dark sm:py-6">Blog</NuxtLink>
         <a class="font-medium text-dark/[.8] hover:text-dark sm:py-6" href="#faq">FAQ</a>
         <a class="font-medium text-dark/[.8] hover:text-dark sm:py-6" href="#contact">Contact</a>
 

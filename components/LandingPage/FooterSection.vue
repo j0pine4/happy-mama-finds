@@ -51,6 +51,7 @@
         <a class=" p-4 inline-flex justify-center items-center gap-x-3.5 text-center text-gray-200 hover:bg-white/[.1] rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-gray-900 transition" target="_blank" href="https://www.facebook.com/profile.php?id=100087238977967">
           Follow our page on Facebook
         </a>
+        <NuxtLink to="/auth/login" class="p-4 inline-flex justify-center items-center gap-x-3.5 text-center text-gray-200 hover:bg-white/[.1] rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-gray-900 transition">Volunteer Login</NuxtLink>
       </div>
       <!-- End Social Brands -->
     </div>

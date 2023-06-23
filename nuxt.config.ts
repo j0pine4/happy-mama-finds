@@ -14,7 +14,7 @@ export default defineNuxtConfig({
     },
     runtimeConfig: {
         public: {
-            GOOGLE_SHEETS_API_KEY: process.env.GOOGLE_SHEETS_API_KEY
+            BASE_URL: process.env.BASE_URL
         },
         private: {
             STRIPE_KEY: process.env.STRIPE_KEY,
