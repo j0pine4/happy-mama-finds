@@ -23,7 +23,11 @@
 
       <!-- Avatar -->
       <div class="mt-6 sm:mt-10 flex items-center">
-        <img class="max-h-10 max-w-10 sm:max-h-14 sm:max-w-14 rounded-full" :src="author?.avatar_url" alt="Image Description" loading="lazy">
+
+        <div>
+          <img class="h-10 w-10 sm:h-14 sm:w-14 rounded-full" :src="author?.avatar_url" alt="Image Description" loading="lazy">
+        </div>
+        
 
         <div class="ml-3 sm:ml-4">
           <p class="sm:mb-1 font-semibold text-gray-800 dark:text-gray-200">

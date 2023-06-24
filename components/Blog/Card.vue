@@ -9,7 +9,7 @@
             <div class="p-4 flex flex-col h-full sm:p-6">
                 <!-- Avatar -->
                 <div class="flex items-center">
-                    <div class="flex-shrink-0">
+                    <div class="">
                         <img class="h-[2.875rem] w-[2.875rem] border-2 border-white rounded-full" :src="author?.avatar_url" alt="Image Description" loading="lazy">
                     </div>
                     <div class="ml-2.5 sm:ml-4">
