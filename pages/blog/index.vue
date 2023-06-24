@@ -114,8 +114,6 @@
         await getBlogList()
     }
 
-    onMounted( () =>{
-        getBlogList()
-    })
+    getBlogList()
 
 </script>
