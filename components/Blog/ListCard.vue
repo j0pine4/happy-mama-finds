@@ -8,9 +8,7 @@
           <div class="grow">
             <div class="p-4 flex flex-col h-full sm:p-6">
               <div class="mb-3">
-                <p v-for="category in props.categories" class="mr-2 mb-2 inline-flex items-center gap-1.5 py-1.5 px-3 rounded-md text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200">
-                  {{ category?.name }}
-                </p>
+                <p v-for="category in props.categories" class="mr-2 mb-2 inline-flex items-center gap-1.5 py-1.5 px-3 rounded-md text-xs font-medium bg-gray-100 text-gray-800"> {{ category?.name }} </p>
               </div>
               <h3 class="text-lg sm:text-2xl font-semibold text-gray-800 group-hover:text-primary dark:text-gray-300 dark:group-hover:text-white">
                 {{ props.title }}
@@ -27,9 +25,7 @@
                   </div>
                   <div class="ml-2.5 sm:ml-4">
                     <h4 class="font-semibold text-gray-800 dark:text-gray-200">{{ author?.firstName }} {{ author?.lastName }}</h4>
-                    <p class="text-xs text-gray-500">
-                      Feb 15, 2021
-                    </p>
+                    <p class="text-xs text-gray-500"> {{ convertDate(props.createdOn) }} </p>
                   </div>
                 </div>
                 <!-- End Avatar -->
@@ -37,12 +33,14 @@
             </div>
           </div>
     </NuxtLink>
-        <!-- End Card -->
+      <!-- End Card -->
+
 </template>
 
 <script setup lang="ts">
 import Author from '~/models/blog/author';
 import { Category } from '~/models/blog/category';
+const { convertDate } = useBlog()
 
     const props = defineProps({
         id: Number,
@@ -51,6 +49,7 @@ import { Category } from '~/models/blog/category';
         title: String,
         title_slug: String,
         subtitle: String,
-        headerImage_url: String
+        headerImage_url: String,
+        createdOn: String,
     })
 </script>

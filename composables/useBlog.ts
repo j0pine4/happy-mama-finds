@@ -18,6 +18,11 @@ export const useBlog = () => {
         return { data, error }
     }
 
+    const FetchLatestBlog = async () => {
+        const { data, error } = await useFetch<BlogThumbnail>(`${config.public.BASE_URL}/api/blog/latest`)
+        return { data, error }
+    }
+
     const FetchBlog = async (slug:string | string[]) => {
         const { data, error } = await useFetch<BlogPost>(`${config.public.BASE_URL}/api/blog/${slug}/`)
         return { data, error }
@@ -41,6 +46,7 @@ export const useBlog = () => {
     return {
         FetchBlogList,
         FetchFeaturedBlogList,
+        FetchLatestBlog,
         FetchBlog,
         convertTags,
         convertDate
