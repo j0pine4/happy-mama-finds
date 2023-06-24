@@ -1,4 +1,9 @@
 <template>
+    <Head>
+        <Title> Welcome to our blog! </Title>
+        <Meta name="description" content="A list of posts for all types of mothers!" />
+    </Head>
+    
     <nav-bar></nav-bar>
 
     <div class="max-w-[85rem] mx-auto mb-12">
