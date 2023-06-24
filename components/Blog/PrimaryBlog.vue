@@ -18,7 +18,9 @@
       <h2 class="text-2xl font-bold md:text-3xl lg:text-4xl lg:leading-tight xl:text-5xl xl:leading-tight text-gray-800 dark:text-gray-200">
         <NuxtLink :to="`blog/${props.title_slug}`" class="hover:text-primary dark:text-gray-300 dark:hover:text-white">
           {{ props.title }}
+          <p class="mt-2 text-gray-600 text-sm"> {{ props.subtitle }}</p>
         </NuxtLink>
+      
       </h2>
 
       <!-- Avatar -->

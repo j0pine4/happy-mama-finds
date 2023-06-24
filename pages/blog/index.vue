@@ -6,7 +6,7 @@
 
     <nav-bar></nav-bar>
 
-    <div class="max-w-[85rem] mx-auto mb-12">
+    <div class="max-w-[85rem] mb-12 mx-4 md:mx-auto ">
 
         <blog-primary-blog
             v-if="!latestBlogErrors && latestBlog" 
