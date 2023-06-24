@@ -1,4 +1,9 @@
 <template>
+  <Head>
+      <Title> Happy Mama Finds </Title>
+      <Meta name="description" content="Connecting Moms, Sharing Stories, Building Community" />
+  </Head>
+
   <nav-bar></nav-bar>
 
   <landing-page-hero-section></landing-page-hero-section>
