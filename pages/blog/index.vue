@@ -9,7 +9,7 @@
     <div class="max-w-[85rem] mb-12 mx-4 md:mx-auto ">
 
         <blog-primary-blog
-            v-if="!latestBlogErrors && latestBlog" 
+            v-if="!errorMsg && latestBlog" 
             :id="latestBlog.id"
             :author="latestBlog.author"
             :title="latestBlog.title"
@@ -22,7 +22,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
             <blog-card 
-                v-if="!featuredBlogErrors" 
+                v-if="!errorMsg" 
                 v-for="blog in featuredBlogs"
                 :id="blog.id"
                 :author="blog.author"
@@ -32,8 +32,8 @@
                 :header-image_url="blog.headerImage_url"
                 :createdOn="blog.created_on"
             ></blog-card>
-            <div v-if="featuredBlogErrors">
-                <h1> {{ featuredBlogErrors }} </h1>
+            <div v-if="errorMsg">
+                <h1> {{ errorMsg }} </h1>
             </div>
         </div>
 
@@ -71,21 +71,43 @@
 
 <script setup lang="ts">
 
-    import { BlogListPaginated } from '~/models/blog/blog';
+    import { BlogListPaginated, BlogThumbnail } from '~/models/blog/blog';
 
     const pageNumber = ref<number>(1)
     const blogList = ref<BlogListPaginated>()
+    const featuredBlogs = ref<BlogThumbnail[]>()
+    const latestBlog = ref<BlogThumbnail>()
     const errorMsg = ref<Error>()
     const isLoadingList = ref<boolean>(false)
 
     const { FetchBlogList, FetchFeaturedBlogList, FetchLatestBlog } = useBlog()
-    const {data:featuredBlogs, error:featuredBlogErrors} = await FetchFeaturedBlogList()
-    const {data:latestBlog, error:latestBlogErrors} = await FetchLatestBlog()
+    
+    const getLatestBlog = async () => {
+        const {data, error } = await FetchLatestBlog()
+
+        if(data.value){
+            latestBlog.value = data.value
+        }
+
+        if(error.value){
+            errorMsg.value = error.value
+        }
+    }
+
+    const getFeaturedBlogs = async () => {
+        const {data, error } = await FetchFeaturedBlogList()
+
+        if(data.value){
+            featuredBlogs.value = data.value
+        }
+
+        if(error.value){
+            errorMsg.value = error.value
+        }
+    }
 
     const getBlogList = async () => {
-
         isLoadingList.value = true
-
         const {data, error} = await FetchBlogList(pageNumber.value)
 
         if(data.value){
@@ -114,6 +136,12 @@
         await getBlogList()
     }
 
-    getBlogList()
+    Promise.allSettled([
+        getBlogList(),
+        getFeaturedBlogs(),
+        getLatestBlog()
+    ])
+
+    
 
 </script>

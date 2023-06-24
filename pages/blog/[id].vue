@@ -30,8 +30,8 @@
 
           <!-- Content -->
             <img :src="blogPost?.headerImage_url" alt="">
-            <div v-html="blogPost?.content" v-if="!error"></div>
-            <p v-else> {{ error }} </p>
+            <div v-html="blogPost?.content" v-if="!errorMsg"></div>
+            <p v-else> {{ errorMsg }} </p>
           <!-- Content End -->
 
           <div class="grid lg:flex lg:justify-between lg:items-center gap-y-5 lg:gap-y-0">
@@ -143,10 +143,44 @@
 </template>
 
 <script setup lang="ts">
-    const route = useRoute()
-    const { FetchBlog, FetchFeaturedBlogList, convertTags, convertDate } = useBlog()
-    const {data:featuredBlogs, error:featuredBlogErrors} = await FetchFeaturedBlogList()
-    const { data:blogPost, error } = await FetchBlog(route.params.id)
+  import { BlogPost, BlogThumbnail } from '~/models/blog/blog';
+
+  const route = useRoute()
+  const { FetchBlog, FetchFeaturedBlogList, convertTags, convertDate } = useBlog() 
+  const blogPost = ref<BlogPost>()
+  const featuredBlogs = ref<BlogThumbnail[]>()
+  const errorMsg = ref<Error>()
+
+  const getFeaturedBlogs = async () => {
+      const {data, error } = await FetchFeaturedBlogList()
+
+      if(data.value){
+          featuredBlogs.value = data.value
+      }
+
+      if(error.value){
+          errorMsg.value = error.value
+      }
+  }
+
+  const getBlogPost = async () => {
+    const {data, error } = await FetchBlog(route.params.id)
+
+      if(data.value){
+        blogPost.value = data.value
+      }
+
+      if(error.value){
+          errorMsg.value = error.value
+      }
+  }
+
+  Promise.allSettled([
+        getFeaturedBlogs(),
+        getBlogPost()
+    ])
+
+
 </script>
 
 <style>
