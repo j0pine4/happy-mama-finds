@@ -2,7 +2,7 @@
 <header class="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-white border-b border-white/[.5] text-sm py-3 sm:py-0 mb-5 sticky top-0">
   <nav class="relative max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8" aria-label="Global">
     <div class="flex items-center justify-between">
-      <a class="flex-none text-xl font-semibold text-primary brand" href="#" aria-label="Brand">Happy Mama Finds</a>
+      <NuxtLink to="/" class="flex-none text-xl font-semibold text-primary brand" aria-label="Brand">Happy Mama Finds</NuxtLink>
       <div class="sm:hidden">
         <button type="button" class="hs-collapse-toggle p-2 inline-flex justify-center items-center gap-2 rounded-md border border-white/[.5] font-medium text-dark/[.5] shadow-sm align-middle hover:bg-white/[.1] hover:text-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm" data-hs-collapse="#navbar-collapse-with-animation" aria-controls="navbar-collapse-with-animation" aria-label="Toggle navigation">
           <svg class="hs-collapse-open:hidden w-4 h-4" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -16,12 +16,11 @@
     </div>
     <div id="navbar-collapse-with-animation" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block">
       <div class="flex flex-col gap-y-4 gap-x-0 mt-5 sm:flex-row sm:items-center sm:justify-end sm:gap-y-0 sm:gap-x-7 sm:mt-0 sm:pl-7">
-        <NuxtLink to="/" class="font-medium text-primary sm:py-6" href="#" aria-current="page">Home</NuxtLink>
-        <a class="font-medium text-dark/[.8] hover:text-dark sm:py-6" href="#events">Events</a>
-        <NuxtLink to="/blog" class="font-medium text-dark/[.8] hover:text-dark sm:py-6">Blog</NuxtLink>
-        <a class="font-medium text-dark/[.8] hover:text-dark sm:py-6" href="#faq">FAQ</a>
-        <a class="font-medium text-dark/[.8] hover:text-dark sm:py-6" href="#contact">Contact</a>
-
+        <NuxtLink to="/" aria-current="page" :class="route.fullPath == '/' ? 'active-link' : 'inactive-link'" >Home</NuxtLink>
+        <NuxtLink to="/#events" :class="route.fullPath == '/#events' ? 'active-link' : 'inactive-link'">Events</NuxtLink>
+        <NuxtLink to="/blog" :class="route.path == '/blog' ? 'active-link' : 'inactive-link'">Blog</NuxtLink>
+        <NuxtLink to="/#faq" :class="route.fullPath == '/#faq' ? 'active-link' : 'inactive-link'">FAQ</NuxtLink>
+        <NuxtLink to="/#contact" :class="route.fullPath == '/#contact' ? 'active-link' : 'inactive-link'">Contact</NuxtLink>
 
         <!-- <a class="flex items-center gap-x-2 font-medium text-dark/[.8] hover:text-dark sm:border-l sm:border-white/[.3] sm:my-6 sm:pl-6" href="#">
           <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -35,3 +34,21 @@
   </nav>
 </header>
 </template>
+
+<script setup lang="ts">
+  const route = useRoute()
+
+</script>
+
+<style>
+  .active-link{
+    @apply
+    font-medium sm:py-6 text-primary
+  }
+
+  .inactive-link{
+    @apply
+    font-medium  hover:text-dark sm:py-6 text-dark/[.8]
+  }
+
+</style>

@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    modules: ['@nuxtjs/tailwindcss', '@nuxtjs/supabase'],
+    modules: ['@nuxtjs/tailwindcss', '@nuxtjs/supabase', '@pinia/nuxt',],
     css: ['~/assets/css/styles.css'],
     plugins: [{ src: '~/plugins/vercel.ts', mode: 'client' }],
     app: {

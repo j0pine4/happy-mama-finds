@@ -11,7 +11,7 @@
     <!-- End Col -->
 
     <div class="sm:order-1">
-      <p v-for="category in props.categories" class="mb-5 inline-flex items-center gap-1.5 py-1.5 px-3 rounded-md text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200">
+      <p v-for="category in props.categories" class="mb-5 mr-2 my-2 inline-flex items-center gap-1.5 py-1.5 px-3 rounded-md text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200">
         {{ category?.name }}
       </p>
 
