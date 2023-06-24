@@ -20,7 +20,7 @@
               <div class="mt-5 sm:mt-auto">
                 <!-- Avatar -->
                 <div class="flex items-center">
-                  <div class="">
+                  <div class="h-[2.875rem] w-[2.875rem] rounded-full">
                     <img class="h-[2.875rem] w-[2.875rem] rounded-full" :src="author?.avatar_url" alt="Image Description" loading="lazy">
                   </div>
                   <div class="ml-2.5 sm:ml-4">
