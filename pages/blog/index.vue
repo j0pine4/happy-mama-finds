@@ -9,6 +9,7 @@
     <div class="max-w-[85rem] mb-12 mx-4 md:mx-auto ">
 
         <blog-primary-blog
+            class="hidden md:block"
             v-if="!errorMsg && latestBlog" 
             :id="latestBlog.id"
             :author="latestBlog.author"

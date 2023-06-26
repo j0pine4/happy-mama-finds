@@ -99,7 +99,7 @@
       <div class="sticky top-0 left-0 py-8 lg:pl-8">
         <!-- Avatar Media -->
         <div class="group flex items-center gap-x-3 border-b border-gray-200 pb-8 mb-8 dark:border-gray-700">
-          <a class="block flex-shrink-0" href="#">
+          <a class="block h-10 w-10" href="#">
             <img class="h-10 w-10 rounded-full" :src="blogPost?.author.avatar_url" alt="Image Description">
           </a>
 
