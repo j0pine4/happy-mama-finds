@@ -38,9 +38,10 @@
 </template>
 
 <script setup lang="ts">
+import { useUtils } from '~/composables/useUtils';
 import Author from '~/models/blog/author';
 import { Category } from '~/models/blog/category';
-const { convertDate } = useBlog()
+const { convertDate } = useUtils()
 
     const props = defineProps({
         id: Number,

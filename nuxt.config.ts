@@ -13,12 +13,11 @@ export default defineNuxtConfig({
         }
     },
     runtimeConfig: {
+        EVENTBRITE_TOKEN: process.env.EVENTBRITE_TOKEN,
+        STRIPE_KEY: process.env.STRIPE_KEY,
         public: {
             BASE_URL: process.env.BASE_URL
         },
-        private: {
-            STRIPE_KEY: process.env.STRIPE_KEY,
-        }
     },
     build: {
         transpile: ['@heroicons/vue']

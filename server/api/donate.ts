@@ -2,7 +2,7 @@ import Stripe from "stripe";
 
 const config = useRuntimeConfig()
 
-const stripe = new Stripe(config.private.STRIPE_KEY, {
+const stripe = new Stripe(config.STRIPE_KEY, {
     apiVersion: '2022-11-15'
 })
 

@@ -35,21 +35,12 @@ export const useBlog = () => {
         }
     }
 
-    const convertDate = (dateStr: string | undefined) => {
-        if(dateStr){
-            const date = new Date(dateStr)
-            return date.toDateString()
-        }
-    }
-
-
     return {
         FetchBlogList,
         FetchFeaturedBlogList,
         FetchLatestBlog,
         FetchBlog,
         convertTags,
-        convertDate
     }
 
 }

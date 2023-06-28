@@ -8,7 +8,7 @@
 
   <landing-page-hero-section></landing-page-hero-section>
 
-  <div class="hidden md:block bg-white">
+  <div class="bg-white">
     <landing-page-upcoming-events></landing-page-upcoming-events>
   </div>
   

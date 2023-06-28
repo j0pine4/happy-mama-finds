@@ -20,6 +20,7 @@
     "@vercel/analytics": "^1.0.1",
     "pinia": "^2.1.4",
     "preline": "^1.8.0",
-    "stripe": "^12.9.0"
+    "stripe": "^12.9.0",
+    "swiper": "^9.4.1"
   }
 }

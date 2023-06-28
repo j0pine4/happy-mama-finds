@@ -33,8 +33,9 @@
 
 <script setup lang="ts">
 
-    import Author from '~/models/blog/author';
-    const { convertDate } = useBlog()
+    import { useUtils } from '~/composables/useUtils';
+import Author from '~/models/blog/author';
+    const { convertDate } = useUtils()
 
     const props = defineProps({
         id: Number,
