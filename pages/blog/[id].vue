@@ -143,10 +143,12 @@
 </template>
 
 <script setup lang="ts">
-  import { BlogPost, BlogThumbnail } from '~/models/blog/blog';
+  import { useUtils } from '~/composables/useUtils';
+import { BlogPost, BlogThumbnail } from '~/models/blog/blog';
 
   const route = useRoute()
-  const { FetchBlog, FetchFeaturedBlogList, convertTags, convertDate } = useBlog() 
+  const { FetchBlog, FetchFeaturedBlogList, convertTags } = useBlog() 
+  const { convertDate } = useUtils()
   const blogPost = ref<BlogPost>()
   const featuredBlogs = ref<BlogThumbnail[]>()
   const errorMsg = ref<Error>()
