@@ -19,7 +19,8 @@
         <NuxtLink to="/" aria-current="page" :class="route.fullPath == '/' ? 'active-link' : 'inactive-link'" >Home</NuxtLink>
         <NuxtLink to="/#events" :class="route.fullPath == '/#events' ? 'active-link' : 'inactive-link'">Events</NuxtLink>
         <NuxtLink to="/blog" :class="route.path == '/blog' ? 'active-link' : 'inactive-link'">Blog</NuxtLink>
-        <NuxtLink to="/#faq" :class="route.fullPath == '/#faq' ? 'active-link' : 'inactive-link'">FAQ</NuxtLink>
+        <!-- <NuxtLink to="/#faq" :class="route.fullPath == '/#faq' ? 'active-link' : 'inactive-link'">FAQ</NuxtLink> -->
+        <NuxtLink to="/sponsors" :class="route.path == '/sponsors' ? 'active-link' : 'inactive-link'">Sponsors</NuxtLink>
         <NuxtLink to="/#contact" :class="route.fullPath == '/#contact' ? 'active-link' : 'inactive-link'">Contact</NuxtLink>
 
         <!-- <a class="flex items-center gap-x-2 font-medium text-dark/[.8] hover:text-dark sm:border-l sm:border-white/[.3] sm:my-6 sm:pl-6" href="#">

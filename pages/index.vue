@@ -24,7 +24,10 @@
   <hr class="max-w-[85rem] mx-auto my-12"> 
 
   <div class="bg-white">
-    <landing-page-contact-section></landing-page-contact-section>
+    <landing-page-contact-section
+      title="Contact Us"
+      subtitle="We'd love to talk about how we can help you."
+    ></landing-page-contact-section>
   </div>
   
 

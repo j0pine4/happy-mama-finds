@@ -5,10 +5,10 @@
   <div class="">
     <div class="">
       <h1 class="text-3xl font-bold text-gray-800 sm:text-4xl dark:text-white">
-        Contact us
+        {{ props.title }}
       </h1>
       <p class="mt-1 text-gray-600 dark:text-gray-400">
-        We'd love to talk about how we can help you.
+        {{ props.subtitle }}
       </p>
     </div>
 
@@ -125,6 +125,11 @@
   import { QuestionMarkCircleIcon, LightBulbIcon, ChatBubbleLeftIcon, GiftIcon } from '@heroicons/vue/24/outline'
 
   const client = useSupabaseClient()
+
+  const props = defineProps({
+        title: String,
+        subtitle: String,
+    })
 
   const contactData = ref(
     {
