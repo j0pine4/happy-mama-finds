@@ -144,17 +144,21 @@
 
 <script setup lang="ts">
   import { useUtils } from '~/composables/useUtils';
-import { BlogPost, BlogThumbnail } from '~/models/blog/blog';
+  import { BlogPost, BlogThumbnail } from '~/models/blog/blog';
+  import { API } from '~/composables/useAPI'
 
   const route = useRoute()
-  const { FetchBlog, FetchFeaturedBlogList, convertTags } = useBlog() 
+  const { FetchBlog, FetchFeaturedBlogList, convertTags, Blog } = useBlog() 
   const { convertDate } = useUtils()
   const blogPost = ref<BlogPost>()
   const featuredBlogs = ref<BlogThumbnail[]>()
   const errorMsg = ref<Error>()
 
+  const client = new API()
+
+
   const getFeaturedBlogs = async () => {
-      const {data, error } = await FetchFeaturedBlogList()
+      const {data, error } = await client.blog.getFeaturedList()
 
       if(data.value){
           featuredBlogs.value = data.value
@@ -166,7 +170,7 @@ import { BlogPost, BlogThumbnail } from '~/models/blog/blog';
   }
 
   const getBlogPost = async () => {
-    const {data, error } = await FetchBlog(route.params.id)
+    const {data, error } = await client.blog.get(route.params.id)
 
       if(data.value){
         blogPost.value = data.value

@@ -28,6 +28,16 @@ export const useBlog = () => {
         return { data, error }
     }
 
+    const Blog = () => {
+
+        const get = async (slug:string | string[]) => {
+            const { data, error } = await useFetch<BlogPost>(`${config.public.BASE_URL}/api/blog/${slug}/`)
+            return { data, error }
+        }
+
+        return get
+    }
+
     const convertTags = (tagStr: string | undefined) => {
         if(tagStr){
             const tagList = tagStr.split(',').filter(e => e)
@@ -41,6 +51,7 @@ export const useBlog = () => {
         FetchLatestBlog,
         FetchBlog,
         convertTags,
+        Blog
     }
 
 }
