@@ -21,13 +21,59 @@
         <h2 class="block text-3xl font-bold sm:text-4xl lg:text-6xl lg:leading-tight text-primary">Our Sponsors</h2>
         <p class="mt-4 text-dark mb-6">Show support to the ones that support our vision!</p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 place-content-center">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 place-content-center mb-6">
+
             <sponsors-card 
-            v-for="i in 5"
                 class="mx-auto w-full"
-                :title="'Test'"
-                :description="'Test here, its going to be cool one day'"
-                :logo_url="'https://images.unsplash.com/photo-1545231027-637d2f6210f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80'"
+                title='Undercover Angels of Saginaw'
+                description='Animal lovers committed to staying dedicated to reducing the number of unwanted, homeless, neglected and abused animals in our area.'
+                logo_url="../../assets/img/sponsors/UnderCover_angels.jpg"
+                business_url="https://www.facebook.com/groups/963849070346935"
+                >
+            </sponsors-card>
+
+            <sponsors-card 
+                class="mx-auto w-full"
+                title='Almighty Treecare'
+                description='Almighty Tree Care: Harnessing expertise and precision to sculpt and maintain the natural beauty of your landscape.'
+                logo_url="../../assets/img/sponsors/almighty_tree_care.jpg"
+                business_url="https://www.facebook.com/almightytree.care"
+                >
+            </sponsors-card>
+
+            <sponsors-card 
+                class="mx-auto w-full"
+                title='Sheppard Design Co.'
+                description='Embroidered goods for home & wear'
+                logo_url="../../assets/img/sponsors/sheppard_design_co.jpg"
+                business_url="https://www.facebook.com/shepparddesignco"
+                >
+            </sponsors-card>
+
+            <sponsors-card 
+                class="mx-auto w-full"
+                title='J. Pine Construction & Design'
+                description='Home Improvements/New construction/Custom Cabinetry, Insured'
+                logo_url="../../assets/img/sponsors/pine_construction.jpg"
+                business_url="https://www.facebook.com/profile.php?id=100068924807791"
+                >
+            </sponsors-card>
+
+            <sponsors-card 
+                class="mx-auto w-full"
+                title='Soul Fit'
+                description='A community of individuals bettering themselves physically, mentally, & spiritually'
+                logo_url="../../assets/img/sponsors/soul_fit.jpg"
+                business_url="https://www.soulfitfam.com/"
+                >
+            </sponsors-card>
+
+            <sponsors-card 
+                class="mx-auto w-full"
+                title='Creative Grace Wedding Planning'
+                description='Creative Grace Provides planning & coordination services for weddings & intimate events in Mid MI. '
+                logo_url="../../assets/img/sponsors/creative_grace_planning.jpg"
+                business_url="https://creativegraceplanning.com/"
                 >
             </sponsors-card>
         </div>
