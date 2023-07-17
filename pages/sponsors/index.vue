@@ -76,6 +76,15 @@
                 business_url="https://creativegraceplanning.com/"
                 >
             </sponsors-card>
+
+            <sponsors-card 
+                class="mx-auto w-full"
+                title='PaperDoll Handmade'
+                description='Handmade home decor'
+                logo_url="../../assets/img/sponsors/paperdoll.jpg"
+                business_url="https://www.facebook.com/paperdollhandmade"
+                >
+            </sponsors-card>
         </div>
 
     </div>
