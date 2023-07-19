@@ -108,6 +108,15 @@
             <p class="text-sm text-gray-500">{{ blogPost?.author.bio }}</p>
           </div>
 
+          <!-- <div>
+            <ins class="adsbygoogle"
+              style="display:block"
+              data-ad-client="ca-pub-6268121744351804"
+              data-ad-slot="9445078662"
+              data-ad-format="auto"
+              data-full-width-responsive="true"></ins>
+          </div> -->
+
         </div>
         <!-- End Avatar Media -->
 
@@ -152,6 +161,17 @@ import { BlogPost, BlogThumbnail } from '~/models/blog/blog';
   const blogPost = ref<BlogPost>()
   const featuredBlogs = ref<BlogThumbnail[]>()
   const errorMsg = ref<Error>()
+
+  useHead({
+      script: [{
+        'data-ad-client': 'ca-pub-6268121744351804',
+        src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+        async: true
+      },
+      {
+        children: "(adsbygoogle = window.adsbygoogle || []).push({});"
+      }]
+    })
 
   const getFeaturedBlogs = async () => {
       const {data, error } = await FetchFeaturedBlogList()
