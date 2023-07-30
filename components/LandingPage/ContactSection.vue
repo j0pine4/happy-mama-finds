@@ -33,12 +33,12 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div class="border rounded">
                 <label for="hs-firstname-contacts-1" class="sr-only">First Name</label>
-                <input type="text" v-model="contactData.firstname" name="hs-firstname-contacts-1" id="hs-firstname-contacts-1" class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="First Name">
+                <input type="text" v-model="contactData.firstName" name="hs-firstname-contacts-1" id="hs-firstname-contacts-1" class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="First Name">
               </div>
 
               <div class="border rounded">
                 <label for="hs-lastname-contacts-1" class="sr-only">Last Name</label>
-                <input type="text" v-model="contactData.lastname" name="hs-lastname-contacts-1" id="hs-lastname-contacts-1" class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Last Name">
+                <input type="text" v-model="contactData.lastName" name="hs-lastname-contacts-1" id="hs-lastname-contacts-1" class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Last Name">
               </div>
             </div>
             <!-- End Grid -->
@@ -123,18 +123,20 @@
 
 <script lang="ts" setup>
   import { QuestionMarkCircleIcon, LightBulbIcon, ChatBubbleLeftIcon, GiftIcon } from '@heroicons/vue/24/outline'
+  import { Contact } from '~/models/contact/contact';
+  import { useContact } from '~/composables/useContact';
 
-  const client = useSupabaseClient()
+  const { CreateContactForm } = useContact();
 
   const props = defineProps({
         title: String,
         subtitle: String,
     })
 
-  const contactData = ref(
+  const contactData = ref<Contact>(
     {
-      firstname: "",
-      lastname: "",
+      firstName: "",
+      lastName: "",
       email: "",
       phoneNumber: "",
       message: "",
@@ -151,18 +153,10 @@
 
     isSubmitted.value = false
 
-    const { data } = await useAsyncData('contact', async () => {
-      const { data } = await client.from('contact').insert({
-        firstName: contactData.value.firstname,
-        lastName: contactData.value.lastname,
-        email: contactData.value.email,
-        phoneNumber: contactData.value.phoneNumber,
-        message: contactData.value.message,
-      })
-    return data
-    })
+    const { data, error } = await CreateContactForm(contactData.value)
 
     isSubmitted.value = true
+
   }
 
 
