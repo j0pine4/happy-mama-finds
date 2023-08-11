@@ -64,7 +64,7 @@
 
           <!-- SVG Element -->
           <div class="absolute bottom-0 left-0 -z-[1] translate-y-24 -translate-x-24">
-            <nuxt-img loading="lazy" :quality="80" :width="50" :height="50" class="w-48 h-auto text-slate-400 dark:text-slate-700" src="https://static.vecteezy.com/system/resources/previews/010/109/977/original/brown-watercolor-background-free-png.png" alt=""></nuxt-img>
+            <nuxt-img loading="lazy" format="webp" :quality="80" :width="50" :height="50" class="w-48 h-auto text-slate-400 dark:text-slate-700" src="https://static.vecteezy.com/system/resources/previews/010/109/977/original/brown-watercolor-background-free-png.png" alt=""></nuxt-img>
           </div>
           <!-- End SVG Element -->
 
