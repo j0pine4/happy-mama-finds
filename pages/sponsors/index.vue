@@ -15,7 +15,7 @@
                 <p class="text-white lg:w-3/4">We are incredibly grateful to our supporting partners for their vital role in making our events possible. Your generous contributions have a profound impact on local mothers and their families, fostering connections, empowerment, and positive change within our community. Thank you for joining us on this journey of making a difference.</p>
             </div>
             
-            <img class="w-full object-cover rounded-xl max-h-[300px]" src="https://images.unsplash.com/photo-1522543558187-768b6df7c25c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Image Description">
+            <nuxt-img class="w-full object-cover rounded-xl max-h-[300px]" src="https://images.unsplash.com/photo-1522543558187-768b6df7c25c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Image Description"></nuxt-img>
         </div>
 
         <h2 class="block text-3xl font-bold sm:text-4xl lg:text-6xl lg:leading-tight text-primary">Our Sponsors</h2>

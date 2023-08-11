@@ -29,7 +29,7 @@
           </div>
 
           <!-- Content -->
-            <img :src="blogPost?.headerImage_url" alt="">
+            <nuxt-img :src="blogPost?.headerImage_url" alt=""></nuxt-img>
             <div v-html="blogPost?.content" v-if="!errorMsg"></div>
             <p v-else> {{ errorMsg }} </p>
           <!-- Content End -->
@@ -100,7 +100,7 @@
         <!-- Avatar Media -->
         <div class="group flex items-center gap-x-3 border-b border-gray-200 pb-8 mb-8 dark:border-gray-700">
           <a class="block h-10 w-10" href="#">
-            <img class="h-10 w-10 rounded-full" :src="blogPost?.author.avatar_url" alt="Image Description">
+            <nuxt-img class="h-10 w-10 rounded-full" :src="blogPost?.author.avatar_url" alt="Image Description"></nuxt-img>
           </a>
 
           <div class="group grow block">
@@ -134,7 +134,7 @@
             </div>
 
             <div class="flex-shrink-0 relative rounded-lg overflow-hidden w-20 h-20">
-              <img class="w-full h-full absolute top-0 left-0 object-cover rounded-lg" :src="blog.headerImage_url" alt="Image Description">
+              <nuxt-img class="w-full h-full absolute top-0 left-0 object-cover rounded-lg" :src="blog.headerImage_url" alt="Image Description"></nuxt-img>
             </div>
           </NuxtLink>
 

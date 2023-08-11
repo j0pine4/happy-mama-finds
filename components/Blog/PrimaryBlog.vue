@@ -5,7 +5,7 @@
   <div class="grid sm:grid-cols-2 sm:items-center gap-8">
     <div class="sm:order-2 max-h-[300px]">
       <div class="relative pt-[50%]  sm:pt-[100%] rounded-lg">
-        <img class="w-full max-h-[300px] absolute top-0 left-0 object-cover rounded-lg" :src="headerImage_url" alt="Image Description">
+        <nuxt-img class="w-full max-h-[300px] absolute top-0 left-0 object-cover rounded-lg" :src="headerImage_url" alt="Image Description"></nuxt-img>
       </div>
     </div>
     <!-- End Col -->
@@ -27,7 +27,7 @@
       <div class="mt-6 sm:mt-10 flex items-center">
 
         <div class="h-10 w-10 sm:h-14 sm:w-14">
-          <img class="h-10 w-10 sm:h-14 sm:w-14 rounded-full" :src="author?.avatar_url" alt="Image Description" loading="lazy">
+          <nuxt-img class="h-10 w-10 sm:h-14 sm:w-14 rounded-full" :src="author?.avatar_url" alt="Image Description" loading="lazy"></nuxt-img>
         </div>
         
 

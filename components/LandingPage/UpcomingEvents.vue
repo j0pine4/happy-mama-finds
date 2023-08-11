@@ -15,7 +15,7 @@
     <!-- Card -->
     <NuxtLink v-if="!error" v-for="event in eventList?.events" :to="event.url" class="group flex flex-col bg-white border rounded-xl hover:shadow-md transition cursor-pointer" >
       <div class="aspect-w-16 aspect-h-9">
-        <img class="w-full h-[200px] object-cover rounded-t-xl" :src="event.logo.url" alt="Image Description">
+        <nuxt-img class="w-full h-[200px] object-cover rounded-t-xl" :src="event.logo.url" alt="Image Description"></nuxt-img>
       </div>
       <div class="p-4 md:p-5">
         <p class="mt-2 font-bold text-primary">
@@ -48,7 +48,7 @@
       <swiper-slide v-for="event in eventList?.events">
         <NuxtLink :to="event.url" class="group flex flex-col bg-white border rounded-xl hover:shadow-md transition cursor-pointer w-full" >
           <div class="aspect-w-16 aspect-h-9">
-            <img class="w-full h-[200px] object-cover rounded-t-xl" :src="event.logo.url" alt="Image Description">
+            <nuxt-img class="w-full h-[200px] object-cover rounded-t-xl" :src="event.logo.url" alt="Image Description"></nuxt-img>
           </div>
           <div class="p-4 md:p-5">
             <p class="mt-2 font-bold text-primary">

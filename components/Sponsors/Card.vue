@@ -5,8 +5,8 @@
       <div class="aspect-w-16 aspect-h-9">
 
         <div class="w-full h-[200px] relative rounded-t-xl overflow-hidden">
-          <img class="h-full w-full p-6 object-cover object-center absolute top-0 z-10 group-hover:scale-105 transition-all duration-300" :src="logo_url" alt="Image Description">
-          <img class="object-cover object-center rounded-t-xl blur-xl" :src="logo_url" alt="Image Description">
+          <nuxt-img class="h-full w-full p-6 object-cover object-center absolute top-0 z-10 group-hover:scale-105 transition-all duration-300" :src="logo_url" alt="Image Description"></nuxt-img>
+          <nuxt-img class="object-cover object-center rounded-t-xl blur-xl" :src="logo_url" alt="Image Description"></nuxt-img>
         </div>
         
       </div>
