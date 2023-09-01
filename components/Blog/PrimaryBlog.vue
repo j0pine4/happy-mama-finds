@@ -27,7 +27,7 @@
       <div class="mt-6 sm:mt-10 flex items-center">
 
         <div class="h-10 w-10 sm:h-14 sm:w-14">
-          <img class="h-10 w-10 sm:h-14 sm:w-14 rounded-full" :src="author?.avatar_url" alt="Image Description" loading="lazy">
+          <img class="h-10 w-10 sm:h-14 sm:w-14 rounded-full" :src="author?.avatar_url" alt="Image Description" >
         </div>
         
 
