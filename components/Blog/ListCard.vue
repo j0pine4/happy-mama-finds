@@ -2,7 +2,7 @@
     <!-- Card -->
     <NuxtLink :to="`blog/${props.title_slug}`"  class="group sm:flex bg-white rounded-xl">
           <div class="flex-shrink-0 relative rounded-l-xl overflow-hidden w-full h-[200px] sm:w-[250px] sm:h-[350px]">
-            <nuxt-img class="w-full h-full absolute top-0 left-0 object-cover" :src="headerImage_url" alt="Image Description" loading="lazy"></nuxt-img>
+            <nuxt-img class="w-full h-full absolute top-0 left-0 object-cover" :src="headerImage_url" alt="Image Description" ></nuxt-img>
           </div>
 
           <div class="grow">
@@ -21,7 +21,7 @@
                 <!-- Avatar -->
                 <div class="flex items-center">
                   <div class="h-[2.875rem] w-[2.875rem] rounded-full">
-                    <nuxt-img class="h-[2.875rem] w-[2.875rem] rounded-full" :src="author?.avatar_url" alt="Image Description" loading="lazy"></nuxt-img>
+                    <nuxt-img class="h-[2.875rem] w-[2.875rem] rounded-full" :src="author?.avatar_url" alt="Image Description" ></nuxt-img>
                   </div>
                   <div class="ml-2.5 sm:ml-4">
                     <h4 class="font-semibold text-gray-800 dark:text-gray-200">{{ author?.firstName }} {{ author?.lastName }}</h4>

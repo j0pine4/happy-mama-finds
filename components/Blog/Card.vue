@@ -2,7 +2,7 @@
 
     <NuxtLink :to="`blog/${props.title_slug}`"   class="group relative block">
         <div class="flex-shrink-0 relative rounded-xl overflow-hidden w-full h-[350px] before:absolute before:inset-x-0 before:w-full before:h-full before:bg-gradient-to-t before:from-gray-900/[.7] before:z-[1]">
-            <nuxt-img class="w-full h-full absolute top-0 left-0 object-cover" :src="headerImage_url" alt="Image Description" loading="lazy"></nuxt-img>
+            <nuxt-img class="w-full h-full absolute top-0 left-0 object-cover" :src="headerImage_url" alt="Image Description" ></nuxt-img>
         </div>
 
         <div class="absolute top-0 inset-x-0 z-10">
@@ -10,7 +10,7 @@
                 <!-- Avatar -->
                 <div class="flex items-center">
                     <div class="h-[2.875rem] w-[2.875rem]">
-                        <nuxt-img class="h-[2.875rem] w-[2.875rem] border-2 border-white rounded-full" :src="author?.avatar_url" alt="Image Description" loading="lazy"></nuxt-img>
+                        <nuxt-img class="h-[2.875rem] w-[2.875rem] border-2 border-white rounded-full" :src="author?.avatar_url" alt="Image Description" ></nuxt-img>
                     </div>
                     <div class="ml-2.5 sm:ml-4">
                         <h4 class="font-semibold text-white"> {{ author?.firstName }} {{ author?.lastName }} </h4>

@@ -49,22 +49,22 @@
           <!-- Tab Content -->
           <div>
             <div id="tabs-with-card-1" role="tabpanel" aria-labelledby="tabs-with-card-item-1">
-              <nuxt-img loading="lazy" class="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/[.2]" src="https://images.unsplash.com/photo-1510972527921-ce03766a1cf1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&h=1220&q=80" alt="Image Description"></nuxt-img>
+              <nuxt-img  class="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/[.2]" src="https://images.unsplash.com/photo-1510972527921-ce03766a1cf1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&h=1220&q=80" alt="Image Description"></nuxt-img>
             </div>
 
             <div id="tabs-with-card-2" class="hidden" role="tabpanel" aria-labelledby="tabs-with-card-item-2">
-              <nuxt-img loading="lazy" class="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/[.2]" src="https://images.unsplash.com/photo-1607748838605-ebcbe8f15772?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&h=1220&q=80" alt="Image Description"></nuxt-img>
+              <nuxt-img  class="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/[.2]" src="https://images.unsplash.com/photo-1607748838605-ebcbe8f15772?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&h=1220&q=80" alt="Image Description"></nuxt-img>
             </div>
 
             <div id="tabs-with-card-3" class="hidden" role="tabpanel" aria-labelledby="tabs-with-card-item-3">
-              <nuxt-img loading="lazy" class="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/[.2]" src="https://images.unsplash.com/photo-1593113616828-6f22bca04804?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&h=1220&q=80" alt="Image Description"></nuxt-img>
+              <nuxt-img  class="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/[.2]" src="https://images.unsplash.com/photo-1593113616828-6f22bca04804?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&h=1220&q=80" alt="Image Description"></nuxt-img>
             </div>
           </div>
           <!-- End Tab Content -->
 
           <!-- SVG Element -->
           <div class="absolute bottom-0 left-0 -z-[1] translate-y-24 -translate-x-24">
-            <nuxt-img loading="lazy" format="webp" :quality="80" :width="50" :height="50" class="w-48 h-auto text-slate-400 dark:text-slate-700" src="https://static.vecteezy.com/system/resources/previews/010/109/977/original/brown-watercolor-background-free-png.png" alt=""></nuxt-img>
+            <nuxt-img  format="webp" :quality="80" :width="50" :height="50" class="w-48 h-auto text-slate-400 dark:text-slate-700" src="https://static.vecteezy.com/system/resources/previews/010/109/977/original/brown-watercolor-background-free-png.png" alt=""></nuxt-img>
           </div>
           <!-- End SVG Element -->
 
